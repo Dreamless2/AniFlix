@@ -1,0 +1,80 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:Aniflix.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		xmlns:asyncImageLoader="clr-namespace:AsyncImageLoader;assembly=AsyncImageLoader.Avalonia"
+		xmlns:i="https://github.com/projektanker/icons.avalonia"
+        mc:Ignorable="d"
+		x:Class="Aniflix.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        Icon="/Assets/avalonia-logo.ico"
+		Background="#1E1E3F"
+		Width="800"
+        Height="600"
+		CanResize="False"
+		WindowStartupLocation="CenterScreen"
+		RequestedThemeVariant="Light"
+        Title="Aniflix">
+
+	<Design.DataContext>
+		<!-- This only sets the DataContext for the previewer in an IDE,
+             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+		<vm:MainWindowViewModel/>
+	</Design.DataContext>
+
+	<Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="Auto"/>
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="Auto"/>
+			<ColumnDefinition Width="Auto"/>
+			<ColumnDefinition Width="Auto"/>
+		</Grid.ColumnDefinitions>
+
+		<Button Grid.Row="0" Grid.Column="0" Width="200" Height="120" Background="#3498DB" Margin="5,0,0,10" Click="OpenFilmes">
+			<Grid>
+				<i:Icon Value="mdi-filmstrip" FontSize="56" Foreground="White" />
+				<TextBlock Margin="1,0,0,0" FontFamily="{StaticResource InconsolataFont}" FontSize="16" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Bottom">Filmes</TextBlock>
+			</Grid>
+		</Button>
+
+		<Button Grid.Row="1" Grid.Column="0" Width="200" Height="120" Background="#D34826" Margin="5,0,0,10">
+			<Grid>
+				<i:Icon Value="mdi-exit-to-app" FontSize="56" Foreground="White" />
+				<TextBlock Margin="1,0,0,0" FontFamily="{StaticResource InconsolataFont}" FontSize="16" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Bottom">Sair</TextBlock>
+			</Grid>
+		</Button>
+
+		<Button Grid.Row="0" Grid.Column="1"  Width="120" Height="120" Background="#228479" Margin="5,0,0,10">
+			<Grid>
+				<i:Icon Value="mdi-camcorder" FontSize="56" Foreground="White" />
+				<TextBlock Margin="1,0,0,0" FontFamily="{StaticResource InconsolataFont}" FontSize="16" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Bottom">Séries</TextBlock>
+			</Grid>
+		</Button>
+
+		<Button Grid.Row="1" Grid.Column="1" Width="120" Height="120" Background="#603DBC" Margin="5,0,0,10">
+			<Grid>
+				<i:Icon Value="mdi-animation-play" FontSize="56" Foreground="White" />
+				<TextBlock Margin="1,0,0,0" FontFamily="{StaticResource InconsolataFont}" FontSize="16" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Bottom">Animes</TextBlock>
+			</Grid>
+		</Button>
+		<Button Grid.Row="0" Grid.Column="2" Width="120" Height="120" Background="#DC6141" Margin="5,0,0,10">
+			<Grid>
+				<i:Icon Value="mdi-balloon" FontSize="56" Foreground="White" />
+				<TextBlock Margin="1,0,0,0" FontFamily="{StaticResource InconsolataFont}" FontSize="16" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Bottom">Gore</TextBlock>
+			</Grid>
+		</Button>
+
+		<Button Grid.Row="1" Grid.Column="2" Width="120" Height="120" Background="#520065" Margin="5,0,0,10">
+			<Grid>
+				<i:Icon Value="mdi-babel" FontSize="56" Foreground="White" />
+				<TextBlock Margin="1,0,0,0" FontFamily="{StaticResource InconsolataFont}" FontSize="16" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Bottom">BreakOut</TextBlock>
+			</Grid>
+		</Button>
+	</Grid>
+
+</Window>
