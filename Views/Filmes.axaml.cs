@@ -14,7 +14,7 @@ public partial class Filmes : Window
 
     public void OnTextChanged(object? sender, RoutedEventArgs e)
     {
-        DotEnv.Load(options: new DotEnvOptions(ignoreExceptions: false));
+        DotEnv.Load(options: new DotEnvOptions(probeForEnv: true, probeLevelsToSearch: 2));
         var apikey = DotEnv.Read();
         var key = apikey["TMDB_KEY"];
         var client = new TMDbClient(key);
