@@ -16,7 +16,7 @@ public partial class Filmes : Window
     {
         DotEnv.Load(options: new DotEnvOptions(probeForEnv: true, probeLevelsToSearch: 1));
         var apikey = DotEnv.Read();
-        var key = apikey["TMDB_KEY"];
+        var key = apikey["KEY"];
         var client = new TMDbClient(key);
         var movie = client.GetMovieAsync(txID.Text).Result;
         txTitulo.Text = movie.OriginalTitle;
