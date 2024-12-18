@@ -1,4 +1,5 @@
 using Avalonia.Controls;
+using Avalonia.Interactivity;
 
 namespace Aniflix.Views
 {
@@ -9,6 +10,11 @@ namespace Aniflix.Views
             InitializeComponent();
         }
 
-
+        // function OpenMovies
+        public static void OpenMovies(object sender, RoutedEventArgs e)
+        {
+            var window = new Filmes();
+            window.Show();
+        }
     }
 }

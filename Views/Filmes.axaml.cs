@@ -1,5 +1,7 @@
 using Avalonia.Controls;
 using Avalonia.Interactivity;
+using dotenv.net;
+using TMDbLib.Client;
 
 namespace Aniflix;
 
@@ -10,8 +12,13 @@ public partial class Filmes : Window
         InitializeComponent();
     }
 
-    public static void OnTextChanged(object? sender, RoutedEventArgs e)
+    public void OnTextChanged(object? sender, RoutedEventArgs e)
     {
-
+        DotEnv.Load();
+        var apikey = DotEnv.Read();
+        var key = apikey["TMDB_KEY"];
+        var client = new TMDbClient(key);
+        var movie = client.GetMovieAsync(txID.Text).Result;
+        txTitulo.Text = movie.OriginalTitle;
     }
 }

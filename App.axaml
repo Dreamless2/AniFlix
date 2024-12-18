@@ -9,8 +9,7 @@
 		<local:ViewLocator/>
 	</Application.DataTemplates>
 	<Application.Styles>
-		<FluentTheme Mode="Dark" />
-		<StyleInclude Source="avares://Aura.UI.FluentTheme/AuraUI.xaml"/>
+		<FluentTheme />
 	</Application.Styles>
 	<Application.Resources>
 		<FontFamily x:Key="InconsolataFont">avares://Aniflix/Assets/Fonts#Inconsolata</FontFamily>

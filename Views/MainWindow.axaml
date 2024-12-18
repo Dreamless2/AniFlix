@@ -35,7 +35,7 @@
 			<ColumnDefinition Width="Auto"/>
 		</Grid.ColumnDefinitions>
 
-		<Button Grid.Row="0" Grid.Column="0" Width="200" Height="120" Background="#3498DB" Margin="5,0,0,10" Click="OpenFilmes">
+		<Button Grid.Row="0" Grid.Column="0" Width="200" Height="120" Background="#3498DB" Margin="5,0,0,10" Click="OpenMovies">
 			<Grid>
 				<i:Icon Value="mdi-filmstrip" FontSize="56" Foreground="White" />
 				<TextBlock Margin="1,0,0,0" FontFamily="{StaticResource InconsolataFont}" FontSize="16" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Bottom">Filmes</TextBlock>
