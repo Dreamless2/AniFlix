@@ -10,6 +10,7 @@ namespace Aniflix;
 public partial class Filmes : Window
 {
     DateTime dataLancamento;
+
     public Filmes()
     {
         InitializeComponent();
@@ -20,12 +21,9 @@ public partial class Filmes : Window
         return "#" + input.Replace(" ", string.Empty);
     }
 
-
-
-
     public void OnlyNumbers(object? sender, TextChangedEventArgs e)
     {
-        if (Regex.IsMatch(txID.Text, "[^0-9]"))
+        if (isOnlyNumbers().IsMatch(txID.Text!))
         {
             txID.Text = "";
         }
@@ -55,4 +53,7 @@ public partial class Filmes : Window
             txTags.Text = "#Filme #Filme" + ano;
         }
     }
+
+    [GeneratedRegex("[^0-9]")]
+    private static partial Regex isOnlyNumbers();
 }
