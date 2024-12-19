@@ -1,4 +1,5 @@
 using System;
+using System.Globalization;
 using System.Text.RegularExpressions;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
@@ -45,7 +46,7 @@ public partial class Filmes : Window
         txFranquia.Text = FormatString(txTitulo.Text);
         txGenero.Text = movie.Genres[0].Name;
 
-        if (DateTime.TryParse(txDataLancamento.Text, out dataLancamento))
+        if (DateTime.TryParseExact(txDataLancamento.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out dataLancamento))
         {
             string ano = dataLancamento.Year.ToString();
             txTags.Text = "#Filme #Filme" + ano;
