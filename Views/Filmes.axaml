@@ -14,7 +14,7 @@
 	<Grid>
 
 		<TextBlock Text="ID do Filme" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,5,0,0"/>
-		<TextBox Width="100" Watermark="ID" x:Name="txID" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,30,0,0" TextChanged="OnTextChanged"/>
+		<TextBox Width="100" Watermark="ID" x:Name="txID" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,30,0,0" TextChanged="OnlyNumbers" LostFocus="OnLostFocus"/>
 
 		<TextBlock Text="Título" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="118,5,0,0"/>
 		<TextBox Width="465" Watermark="Título" x:Name="txTitulo" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="118,30,0,0"/>

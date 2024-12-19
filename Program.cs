@@ -18,6 +18,11 @@ namespace Aniflix
         [STAThread]
         public static void Main(string[] args)
         {
+            var builder = new ConfigurationBuilder()
+               .SetBasePath(Directory.GetCurrentDirectory())
+               .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
+            Configuration = builder.Build();
+
             BuildAvaloniaApp()
             .StartWithClassicDesktopLifetime(args);
         }
@@ -25,12 +30,6 @@ namespace Aniflix
         // Avalonia configuration, don't remove; also used by visual designer.
         public static AppBuilder BuildAvaloniaApp()
         {
-
-            var builder = new ConfigurationBuilder()
-                .SetBasePath(Directory.GetCurrentDirectory())
-                .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
-
-            Configuration = builder.Build();
 
             IconProvider.Current
                 .Register<FontAwesomeIconProvider>()
