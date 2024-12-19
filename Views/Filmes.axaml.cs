@@ -20,6 +20,9 @@ public partial class Filmes : Window
         return "#" + input.Replace(" ", string.Empty);
     }
 
+
+
+
     public void OnlyNumbers(object? sender, TextChangedEventArgs e)
     {
         if (Regex.IsMatch(txID.Text, "[^0-9]"))

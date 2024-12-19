@@ -9,7 +9,6 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<Folder Include="Models\" />
 		<AvaloniaResource Include="Assets\**" />
 	</ItemGroup>
 
@@ -35,5 +34,9 @@
 		<PackageReference Include="Projektanker.Icons.Avalonia.FontAwesome" Version="9.5.0" />
 		<PackageReference Include="Projektanker.Icons.Avalonia.MaterialDesign" Version="9.5.0" />
 		<PackageReference Include="TMDbLib" Version="2.2.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Models\" />
 	</ItemGroup>
 </Project>
