@@ -4,11 +4,11 @@ namespace Aniflix.Extensions
 {
     public static class GenderExtensions
     {
-        public static void CleanNames()
+        public static string CleanNames()
         {
             string[] genres = { "ação", "mistério", "ficção científica", "thriller" };
 
-            StringBuilder result = new StringBuilder();
+            StringBuilder result = new();
 
             foreach (var genre in genres)
             {

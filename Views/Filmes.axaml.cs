@@ -58,9 +58,8 @@ public partial class Filmes : Window
         string plain = new string(genre
             .RemoveDiacritics()
             .Where(char.IsAscii)
-            .ToArray());
-
-
+            .ToArray()
+         );
 
         txGenero.Text = "#" + plain.ToLower() + " " + "#" + movie.Genres[1].Name.ToLower() + " " + "#" + movie.Genres[2].Name.ToLower();
         txDiretor.Text = movie.Title;
