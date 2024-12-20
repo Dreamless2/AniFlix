@@ -54,7 +54,7 @@ public partial class Filmes : Window
         }
 
         txGenero.Text = "#" + movie.Genres[0].Name.ToLower() + " " + "#" + movie.Genres[1].Name.ToLower() + " " + "#" + movie.Genres[2].Name.ToLower() + " " + "#" + movie.Genres[3].Name.ToLower();
-        txDiretor.Text = movie.Id.ToString();
+        txDiretor.Text = movie.Title;
     }
 
     [GeneratedRegex("[^0-9]")]
