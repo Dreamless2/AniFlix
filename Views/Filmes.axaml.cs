@@ -29,7 +29,6 @@ public partial class Filmes : Window
         {
             txID.Text = "";
         }
-
     }
 
     public void OnLostFocus(object? sender, RoutedEventArgs e)
@@ -39,7 +38,6 @@ public partial class Filmes : Window
             DefaultLanguage = "pt-BR",
             DefaultCountry = "BR"
         };
-
 
         var movie = client.GetMovieAsync(txID.Text).Result;
         txTitulo.Text = movie.Title;
@@ -54,14 +52,27 @@ public partial class Filmes : Window
             txTags.Text = "#Filme #Filme" + ano;
         }
 
-        string genre = movie.Genres[0].Name;
-        string plain = new string(genre
+        string g0 = movie.Genres[0].Name;
+        string p0 = new(g0
+            .RemoveDiacritics()
+            .Where(char.IsAscii)
+            .ToArray()
+         );
+        string g1 = movie.Genres[0].Name;
+        string p1 = new(g1
             .RemoveDiacritics()
             .Where(char.IsAscii)
             .ToArray()
          );
 
-        txGenero.Text = "#" + plain.ToLower() + " " + "#" + movie.Genres[1].Name.ToLower() + " " + "#" + movie.Genres[2].Name.ToLower();
+        string g2 = movie.Genres[0].Name;
+        string p2 = new(g2
+            .RemoveDiacritics()
+            .Where(char.IsAscii)
+            .ToArray()
+         );
+
+        txGenero.Text = "#" + p0.ToLower() + " " + "#" + p1.ToLower() + " " + "#" + p2.ToLower();
         txDiretor.Text = movie.Title;
     }
 
