@@ -45,7 +45,6 @@ public partial class Filmes : Window
         txTituloOriginal.Text = movie.OriginalTitle;
         txDataLancamento.Text = movie.ReleaseDate?.ToString("dd/MM/yyyy");
         txFranquia.Text = FormatString(txTitulo.Text);
-        txGenero.Text = movie.Genres[0].Name;
 
         if (DateTime.TryParseExact(txDataLancamento.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out dataLancamento))
         {
@@ -53,7 +52,7 @@ public partial class Filmes : Window
             txTags.Text = "#Filme #Filme" + ano;
         }
 
-        txGenero.Text = "#" + movie.Genres[0].Name.ToLower() + " " + "#" + movie.Genres[1].Name.ToLower() + " " + "#" + movie.Genres[2].Name.ToLower() + " " + "#" + movie.Genres[3].Name.ToLower();
+        txGenero.Text = "#" + movie.Genres[0].Name.ToLower() + " " + "#" + movie.Genres[1].Name.ToLower() + " " + "#" + movie.Genres[2].Name.ToLower();
         txDiretor.Text = movie.Title;
     }
 
