@@ -52,6 +52,8 @@ public partial class Filmes : Window
             string ano = dataLancamento.Year.ToString();
             txTags.Text = "#Filme #Filme" + ano;
         }
+
+        txGenero.Text = movie.Genres.ToString();
     }
 
     [GeneratedRegex("[^0-9]")]
