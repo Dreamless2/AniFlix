@@ -1,6 +1,8 @@
 using System;
 using System.Globalization;
+using System.Linq;
 using System.Text.RegularExpressions;
+using Aniflix.Extensions;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
 using TMDbLib.Client;
@@ -52,7 +54,15 @@ public partial class Filmes : Window
             txTags.Text = "#Filme #Filme" + ano;
         }
 
-        txGenero.Text = "#" + movie.Genres[0].Name.ToLower() + " " + "#" + movie.Genres[1].Name.ToLower() + " " + "#" + movie.Genres[2].Name.ToLower();
+        string genre = movie.Genres[0].Name;
+        string plain = new string(genre
+            .RemoveDiacritics()
+            .Where(char.IsAscii)
+            .ToArray());
+
+
+
+        txGenero.Text = "#" + plain.ToLower() + " " + "#" + movie.Genres[1].Name.ToLower() + " " + "#" + movie.Genres[2].Name.ToLower();
         txDiretor.Text = movie.Title;
     }
 
