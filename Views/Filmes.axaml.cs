@@ -53,7 +53,7 @@ public partial class Filmes : Window
             txTags.Text = "#Filme #Filme" + ano;
         }
 
-        txGenero.Text = movie.Genres.ToString();
+        txGenero.Text = "#" + movie.Genres[0].Name + "#" + movie.Genres[1].Name + "#" + movie.Genres[2].Name;
     }
 
     [GeneratedRegex("[^0-9]")]
