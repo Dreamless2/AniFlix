@@ -75,8 +75,7 @@ public partial class Filmes : Window
 
         var credits = new MovieCredits();
         txGenero.Text = "#" + p0.ToLower() + " " + "#" + p1.ToLower() + " " + "#" + p2.ToLower();
-        txDiretor.Text = credits.Crew.ToString();
-
+        txDiretor.Text = movie.Credits.Crew[0].Name;
     }
 
     [GeneratedRegex("[^0-9]")]
