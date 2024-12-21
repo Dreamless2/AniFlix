@@ -6,6 +6,7 @@ using Aniflix.Extensions;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
 using TMDbLib.Client;
+using TMDbLib.Objects.People;
 
 namespace Aniflix;
 
@@ -53,27 +54,29 @@ public partial class Filmes : Window
         }
 
         string g0 = movie.Genres[0].Name;
+        string g1 = movie.Genres[0].Name;
+        string g2 = movie.Genres[0].Name;
+
         string p0 = new(g0
             .RemoveDiacritics()
             .Where(char.IsAscii)
             .ToArray()
          );
-        string g1 = movie.Genres[0].Name;
         string p1 = new(g1
             .RemoveDiacritics()
             .Where(char.IsAscii)
             .ToArray()
          );
-
-        string g2 = movie.Genres[0].Name;
         string p2 = new(g2
             .RemoveDiacritics()
             .Where(char.IsAscii)
             .ToArray()
-         );
+        );
 
+        var credits = new MovieCredits();
         txGenero.Text = "#" + p0.ToLower() + " " + "#" + p1.ToLower() + " " + "#" + p2.ToLower();
-        txDiretor.Text = movie.Title;
+        txDiretor.Text = credits.Crew.ToString();
+
     }
 
     [GeneratedRegex("[^0-9]")]
